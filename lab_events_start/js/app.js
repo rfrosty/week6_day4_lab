@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('#new-item-form');
   form.addEventListener('submit', handleFormSubmit);
+
+  const button = document.querySelector('#button');
+  button.addEventListener('click', handleButtonClick)
 });
 
 const handleFormSubmit = function(event){
@@ -23,4 +26,11 @@ const handleFormSubmit = function(event){
   list.appendChild(listItemCategory);
 
   document.querySelector('#new-item-form').reset()
+};
+
+const handleButtonClick = function(event){
+  const allLi = document.querySelectorAll('li')
+  allLi.forEach((li) => {
+    li.remove();
+  });
 };
